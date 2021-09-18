@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container-fluid" >
+          <a class="navbar-brand" href="#">Macana Bebidas</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0" >
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Lista de precios</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav ms-auto  mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link cart" href="#"> <img src="../img/cart.svg" alt="" width="25"></a>
+                </li>
+            </ul>
+            
+          </div>
+        </div>
+    </nav>
+
+
+
+
+     <!-- PRINCIPIO CARRITO -->
+  <section id="sectionCart">
+    <div class="container">
+      <h1 class="text-center mt-5">CARRITO</h1>
+      <hr>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="shoppingCartHeader">
+            <h6>Bebida</h6>
+          </div>
+        </div>
+        <div class="col-6 col-md-2">
+          <div class="shoppingCartHeader">
+            <h6 class="text-truncate">Precio</h6>
+          </div>
+        </div>
+        <div class="col-6 col-md-4">
+          <div class="shoppingCartHeader">
+            <h6>Unidades</h6>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- PRINCIPIO ITEMS CARRITO -->
+      <div class="cartItemsContainer">
+
+      </div>
+      <!-- FIN ITEMS CARRITO -->
+
+
+
+      <!-- PRINCIPIO TOTAL -->
+      <div class="row mt-5 mb-5">
+        <div class="col-12">
+          <div class="cartTotalContainer d-flex align-items-center">
+            <p class="mb-0">Total</p>
+            <p class="ms-4 mb-0 cartTotal">0</p>
+            <button class="btn btn-success ms-auto buyButton" type="button" data-bs-toggle="modal"
+            data-bs-target="#buyModal">Comprar</button>
+          </div>
+        </div>
+        <div class="toast-container fixed-top end-0">
+          <div class="toast toast-increase align-items-center text-dark bg-warning border-0 shadow-lg h-100" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+              <strong class="me-auto"><img src="../img/exclamation-triangle.svg" alt="" width="20"></strong>
+              <small>ahora</small>
+              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body fs-6 fw-normal">
+              Se aumentó la cantidad del producto seleccionado.
+            </div>
+          </div>
+          <div class="toast toast-additem align-items-center text-white bg-dark border-0 shadow-lg" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+              <strong class="me-auto"><img src="../img/emoji-sunglasses.svg" alt="" width="20"></strong>
+              <small>ahora</small>
+              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body fs-6">
+              Se agregó correctamente el producto al carrito.
+            </div>
+          </div>
+        </div>
+        
+
+      <!-- FIN TOTAL -->
+    
+
+      <div class="modal fade" id="buyModal" tabindex="-1" aria-labelledby="buyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">¡Gracias por su compra!</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body modalBody">
+              Su pedido se encuentra en preparación.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+                
+        
+        
+   
+   
+    
+
+
+
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+      <script src="../cart.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./style/style.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Macana Bebidas</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Lista de precios</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link buttonViewCart" href="#" id="cart" > <img src="./img/cart.svg" alt="" width="25">Cart<span class="badge"></span></a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+  
+  <!-- SELECTOR FILTRO -->
+  <main class="container-fluid bg-dark bg-opacity-50 pb-5">
+    <h1 class="text-center pt-5 text-white">EMPEZA TU NOCHE CON ESTE TRAGO RANDOM:</h1>
+    <section class="card col-12 col-sm-6 m-auto mt-5 ">
+      
+      <div class="row rowRandomDrink">
+
+      </div>
+      
+    </section>
+  </main>
+<!-- SELECTOR FILTRO FIN -->
+
+
+
+
+
+<!-- CARDS PRODUCTOS -->
+  <main id="container">
+    <div class="row g-0">
+
+      <!-- GRUPO ACORDEON -->
+      <section class="col-sm-3 col-lg-2 col-12">
+        <div class="card mb-5 mt-5 mb-sm-1 mb-md-3 mb-lg-3 border-0">
+          <div class="card-body">
+            <div class="accordion accordion-flush " id="accordion-flush">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                  <button class="accordion-button collapsed border " type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    Filtrar por...
+                  </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlush">
+                  <div class="accordion-body">
+                    <div class="accordion accordion-flush" id="accordionFlush">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingFour">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                            Tipo de bebida
+                          </button>
+                        </h2>
+                        <div id="flush-collapseFour" class="accordion-collapse collapse show " aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlush" >
+                          <div class="accordion-body bodyFilterTipo rounded-1 border bg-dark bg-opacity-25">
+                            <button type="button" class="btn btn-sm btn-outline-dark filterTipo border-0"  name="allTypes">Todos</button>
+                            <button type="button" class="btn btn-sm btn-outline-dark filterTipo border-0"  name="Cerveza">Cerveza</button>
+                            <button type="button" class="btn btn-sm btn-outline-dark filterTipo border-0"  name="Vodka">Vodka</button>
+                            <button type="button" class="btn btn-sm btn-outline-dark filterTipo border-0"  name="Fernet">Fernet</button>
+                            <button type="button" class="btn btn-sm btn-outline-dark filterTipo border-0"  name="Vino">Vinos</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            Marca
+                          </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlush">
+                          <div class="accordion-body rounded-1 border bg-dark bg-opacity-25">
+                            <button type="button" class="btn btn-sm btn-outline-dark filterMarca border-0" value="allTypes">Todas</button>
+                            <button type="button" class="btn btn-sm btn-outline-dark filterMarca border-0" value="Bols">Bols</button>
+                            <button type="button" class="btn btn-sm btn-outline-dark filterMarca border-0" value="Absolut">Absolut</button>
+                            <button type="button" class="btn btn-sm btn-outline-dark filterMarca border-0" value="Skyy">Skyy</button>
+                            <button type="button" class="btn btn-sm btn-outline-dark filterMarca border-0" value="Smirnoff">Smirnoff</button>
+                            <button type="button" class="btn btn-sm btn-outline-dark filterMarca border-0" value="Andes">Andes</button>
+                            <button type="button" class="btn btn-sm btn-outline-dark filterMarca border-0" value="Cosecha Tardia">Cosecha Tardía</button>
+                            <button type="button" class="btn btn-sm btn-outline-dark filterMarca border-0" value="Dadá">Dadá</button>
+                            <button type="button" class="btn btn-sm btn-outline-dark filterMarca border-0" value="Branca">Branca</button>
+                            <button type="button" class="btn btn-sm btn-outline-dark filterMarca border-0" value="1882">1882</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            Precio
+                          </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse show" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlush">
+                          <div class="accordion-body rounded-1 border bg-dark bg-opacity-25">
+                            <button type="button" class="btn btn-sm btn-outline-dark border-0" id="filterPrecio">Menor</button>
+                            <button type="button" class="btn btn-sm btn-outline-dark border-0" id="filterPrecio">Mayor</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+               
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+      </section>
+
+      <!-- FIN GRUPO ACORDEON -->
+
+
+
+      
+    <section class="col-sm-6 col-12">
+      <div class="row rowProducts">
+
+      </div>
+    </section>
+
+
+    
+    <section class="col-sm-3 cartContainer active rounded-top border border-2 mt-5 ms-lg-5" id="viewCart">
+      <section id="sectionCart">
+        <div class="container">
+          <h3 class="text-center mt-2 bg-dark text-white p-1">Productos</h3>
+          <hr>
+          
+    
+    
+    
+          <!-- PRINCIPIO ITEMS CARRITO -->
+          <div class="cartItemsContainer">
+    
+          </div>
+          <!-- FIN ITEMS CARRITO -->
+    
+    
+    
+          <!-- PRINCIPIO TOTAL -->
+          <div class="row mt-5 mb-5">
+            <div class="col-12">
+              <div class="cartTotalContainer d-flex align-items-center justify-content-around">
+                <p class="mb-0 lead">Total</p>
+                <p class="ms-4 mb-0 lead fw-bold cartTotal text-success totalDinero">0</p>
+                
+              </div>
+            </div>
+            <div class="col-12 mt-3">
+              <div class="cartTotalContainer d-flex align-items-center">
+                <button class="btn btn-success ms-auto bt-lg buyButton" type="button" data-bs-toggle="modal"
+                  data-bs-target="#buyModal"> Comprar
+                </button>
+              </div>
+            </div>
+            
+            
+    
+          
+    
+    
+          
+    
+    
+    
+    
+    
+    
+        </div>
+    
+      </section>
+      <!-- FIN CARRITO -->
+    
+    </section>
+     
+    <!-- MODAL AGREGAR PRODUCTO Y AUMENTAR CANTIDAD -->
+    <div class="toast-container fixed-top end-0">
+      <div class="toast toast-increase align-items-center text-dark bg-warning border-0 shadow-lg h-100" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <strong class="me-auto"><img src="./img/exclamation-triangle.svg" alt="" width="20"></strong>
+          <small>ahora</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body fs-6 fw-normal">
+          Se aumentó la cantidad del producto seleccionado.
+        </div>
+      </div>
+      <div class="toast toast-additem align-items-center text-white bg-dark border-0 shadow-lg" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <strong class="me-auto"><img src="./img/emoji-sunglasses.svg" alt="" width="20"></strong>
+          <small>ahora</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body fs-6">
+          Se agregó correctamente el producto al carrito.
+          <div class="col-12 offset-9">
+            <a href="#viewCart"><button type="button" class="btn btn-outline-light btn-sm mt-1 p-1 buttonViewCart">Ver carrito</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- FIN MODAL AUMENTAR PRODUCTO Y AUMENTAR CANTIDAD -->
+      
+    </div>
+
+  </main>
+
+  <!-- CARDS PRODUCTOS FIN -->
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+  
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+.quantity input {
+  width: 51px;
+  margin: auto;
+  border: 1px solid rgb(213, 198, 198);
+  border-radius: 10px;
+  text-align: center;
+}
+
+
+ 
+
+.active{
+    display: none;
+}
+
