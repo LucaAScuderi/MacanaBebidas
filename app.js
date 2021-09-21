@@ -24,6 +24,7 @@ class Bebidas{
 
 
 
+
 const listadoBebidas = [];
 
 const bebida1 = new Bebidas("Vodka", "Bols", "", "1L.", 400, 40, 1, "https://statics.dinoonline.com.ar/imagenes/full_600x600_ma/3070357_f.jpg");
@@ -62,13 +63,15 @@ listadoBebidas.push(bebida11)
 
 
 
-const cartItemsContainer = document.querySelector(`.cartItemsContainer`)
-const buyButton = document.querySelector(`.buyButton`)
+const cartItemsContainer = document.querySelector(`.cartItemsContainer`);
+const buyButton = document.querySelector(`.buyButton`);
 const modalBody = document.querySelector(`.modalBody`);
-const urlAPI = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
-const buttonViewCart = document.querySelectorAll(`.buttonViewCart`)
-const cartContainer = document.querySelector(`.cartContainer`)
-const localStorageCart = []
+const urlAPI = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
+const buttonViewCart = document.querySelectorAll(`.buttonViewCart`);
+const cartContainer = document.querySelector(`.cartContainer`);
+
+
+
 
  
 
@@ -85,9 +88,14 @@ const localStorageCart = []
  .then(res => res.json())
  .then(data =>{
      
-     
- 
-     let containerRandomDrink = document.querySelector(".rowRandomDrink")
+    let sectionRandomDrink = document.querySelector(".sectionRandomDrink") 
+    sectionRandomDrink.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(${data.drinks[0].strDrinkThumb})`
+    sectionRandomDrink.style.backgroundRepeat = "no-repeat"
+    sectionRandomDrink.style.backgroundSize = "cover"
+    sectionRandomDrink.style.backgroundPosition = "center left"
+
+    
+    let containerRandomDrink = document.querySelector(".rowRandomDrink")
      
      let divCol1 = document.createElement("div")
      divCol1.setAttribute("class", "col-12 col-md-5")
@@ -144,8 +152,7 @@ listadoBebidas.forEach(e => {
 
     let divCard = document.createElement("div");
     divCard.setAttribute("class", `card mb-5 mt-5 mb-sm-1 mb-md-3 mb-lg-3 border-0 bg-dark bg-opacity-100 text-white shadow-lg cardProduct`);
-    //divCard.setAttribute("name", `${e.bebida}`)
-    //divCard.setAttribute("value", `${e.marca}`)
+   
 
 
     let imgCard = document.createElement("img");
@@ -269,14 +276,9 @@ const buyButtonClicked = () =>{
         button: "Aww yiss!",
       });
     }
+
+
 }
-
-
-
-
-
-
-
 
 
 
@@ -295,20 +297,14 @@ const buyButtonClicked = () =>{
 
 const addToCartClick = (event) =>{
     
-     const button = event.target;
+    const button = event.target;
     const itemCard = button.closest(`.card`);
     
     const cardTitle = itemCard.querySelector(`.card-title`).textContent;
     const cardIMG = itemCard.querySelector(`.image`).src;
-    const cardPrice = itemCard.querySelector(`.price`).textContent;  
-
-    
-    
-    
+    const cardPrice = itemCard.querySelector(`.price`).textContent;   
     
     addItemToShoppingCart(cardTitle, cardPrice, cardIMG)
-    
-    
 }
 
 
@@ -368,9 +364,12 @@ const addItemToShoppingCart = (cardTitle, cardPrice, cardIMG) => {
     
     shoppingCartRow.querySelector(".buttonDelete").addEventListener("click", removeShoppingCartItem);
     
-    shoppingCartRow.querySelector(`.shoppingCartItemQuantity`).addEventListener("change", quantityChange);
+    let shoppingCartItemQuantity = shoppingCartRow.querySelector(`.shoppingCartItemQuantity`)
+    let shoppingCartItemQuantityValue = shoppingCartItemQuantity.value
+    shoppingCartItemQuantity.addEventListener("change", quantityChange);
 
     updateShoppingCartTotal()
+
 
 }
 
@@ -385,6 +384,7 @@ addToCartButton.forEach(buttonFunction =>{
     buttonFunction.addEventListener(`click`, () => {
         $(`.toast-additem`).toast(`show`);
     });
+    
 })
 
 
