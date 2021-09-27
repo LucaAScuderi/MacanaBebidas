@@ -237,6 +237,7 @@ const quantityChange = (event) => {
 }
 
 const updateShoppingCartTotal = () => {
+    
     let total = 0;
     const shoppingCartTotal = document.querySelector(`.cartTotal`);
     
@@ -273,7 +274,7 @@ const buyButtonClicked = () =>{
         title: "¡Muchas gracias por su compra!",
         text: "El pedido está siendo preparado.",
         icon: "success",
-        button: "Aww yiss!",
+        button: "Ok :)",
       });
     }
 
